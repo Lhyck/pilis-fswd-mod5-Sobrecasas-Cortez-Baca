@@ -8,6 +8,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SPACING } from './src/utils/theme'
 import { FontAwesome5 } from '@expo/vector-icons'
 import { useRef } from 'react';
+import { LocationListStackScreens } from './src/screens/LocationList/locationListStackScreen.jsx'
+
 
 const Tab = createBottomTabNavigator();
 
@@ -72,9 +74,8 @@ export default function App() {
           }
         })}></Tab.Screen>
 
-        <Tab.Screen name={"Explorar"} component={SearchScreen} options={tabScreenOptions}
+        <Tab.Screen name={"Explorar"} component={LocationListStackScreens} options={tabScreenOptions}
           listeners={({ navigation, route }) => ({
-            // Onpress Update....
             tabPress: e => {
               Animated.spring(tabOffsetValue, {
                 toValue: getWidth(),

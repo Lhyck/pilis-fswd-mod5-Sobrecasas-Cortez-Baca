@@ -94,7 +94,7 @@ export const data = [{
         rating: '4.9',
         description: ' Espectáculo infantil, con llos mejores personajes. Para el entretenimiento de los niños. A partir del 23 de Abril ',
         images: [
-            require('../../assets/images/Slide7/'),
+            require('../../assets/images/Slide7/PanCasero.png'),
             require('../../assets/images/Slide7/ima1.jpg'),
             require('../../assets/images/Slide7/ima2.jpg'),
             require('../../assets/images/Slide7/ima2.jpg'),

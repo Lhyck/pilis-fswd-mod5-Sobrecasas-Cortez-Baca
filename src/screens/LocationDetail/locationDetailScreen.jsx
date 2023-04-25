@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import { View, Text, ScrollView, Image } from "react-native";
 import { styles } from "./locationDetailScreen.styles";
 import { IcoIcons } from "@expo/vector-icons";
@@ -9,7 +9,7 @@ export const LocationDetailScreen = ({ route }) => {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.container}>
-        <ScrollView horizontal pagingEnabled style={styles.ImageContainer}>
+        <ScrollView horizontal pagingEnabled style={styles.imageContainer}>
           {item.images.map((image, idx) => (
             <image
               key={idx}
@@ -21,7 +21,7 @@ export const LocationDetailScreen = ({ route }) => {
         </ScrollView>
       </View>
 
-      <View style={style.textContainer}>
+      <View style={styles.textContainer}>
         <Text style={styles.title}>{item.title}</Text>
         <Text style={styles.location}>{item.location}</Text>
         <Text style={styles.price}>{item.price}</Text>

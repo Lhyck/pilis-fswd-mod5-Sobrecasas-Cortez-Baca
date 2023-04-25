@@ -103,3 +103,34 @@ export const data = [{
         price: 'GRATUITO'
     }
 ]
+
+export const regiones = [
+    {
+        id: '1',
+        title: 'Puna',
+        description: 'La inmensidad y el esplendor se conjugan con el diáfano',
+        images: require('../../assets/images/home/puna.webp'),
+       
+    },
+    {
+        id: '2',
+        title: 'Valle',
+        description: 'Los Valles que nacen al sur de la Quebrada, desde Lozano hasta el Río de Las Pavas, en El Carmen',
+        images: require('../../assets/images/home/valle.jpg'),
+       
+    },
+    {
+        id: '3',
+        title: 'Quebrada',
+        description: 'La Quebrada, mejor conocida como “de Humahuaca” es la región contigua a la anterior.',
+        images: require('../../assets/images/home/quebrada.jpg'),
+       
+    },
+    {
+        id: '4',
+        title: 'Yungas',
+        description: 'Las Yungas – extenso corredor biomático, por sus características climáticas y fitogeográficas – son la continuación hacia el este de la Quebrada, separados de ésta por la Cordillera Oriental.',
+        images: require('../../assets/images/home/yungas.jpg'),
+       
+    },
+]

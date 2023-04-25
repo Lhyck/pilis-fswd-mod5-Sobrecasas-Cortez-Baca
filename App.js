@@ -9,6 +9,7 @@ import { COLORS, SPACING } from './src/utils/theme'
 import { FontAwesome5 } from '@expo/vector-icons'
 import { useRef } from 'react';
 import { LocationListStackScreens } from './src/screens/LocationList/locationListStackScreen.jsx'
+import { HomeScreen } from './src/screens/home/HomeScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -17,7 +18,7 @@ const TAB_ICON = {
   Home: 'home',
   Explorar: 'search',
   Profile: 'user',
-  Alert: 'bell',
+  Info: 'info-circle',
   Visit: 'heart-circle-outline'
 }
 
@@ -104,7 +105,7 @@ export default function App() {
           )
         }}></Tab.Screen>
 
-        <Tab.Screen name={"Alert"} component={NotificationScreen} options={tabScreenOptions} listeners={({ navigation, route }) => ({
+        <Tab.Screen name={"Info"} component={NotificationScreen} options={tabScreenOptions} listeners={({ navigation, route }) => ({
           tabPress: e => {
             Animated.spring(tabOffsetValue, {
               toValue: getWidth() * 3 - 20,
@@ -163,13 +164,7 @@ function SettingsScreen() {
   );
 }
 
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home!</Text>
-    </View>
-  );
-}
+
 
 function NotificationScreen() {
   return (
@@ -179,13 +174,7 @@ function NotificationScreen() {
   );
 }
 
-function SearchScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Search!</Text>
-    </View>
-  );
-}
+
 
 const styles = StyleSheet.create({
   tabBar: {

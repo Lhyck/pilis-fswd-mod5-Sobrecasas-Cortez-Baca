@@ -1,6 +1,5 @@
 import { StyleSheet, StatusBar, Dimensions } from 'react-native'
 import { COLORS, FONT_SIZE } from '../../utils/theme'
-import { Colors } from 'react-native/Libraries/NewAppScreen'
 
 export const styles = StyleSheet.create({
   container: {

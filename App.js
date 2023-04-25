@@ -10,6 +10,7 @@ import { FontAwesome5 } from '@expo/vector-icons'
 import { useRef } from 'react';
 import { LocationListStackScreens } from './src/screens/LocationList/locationListStackScreen.jsx'
 import { HomeScreen } from './src/screens/home/HomeScreen';
+import { InfoScreen } from './src/screens/info/InfoScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -105,7 +106,7 @@ export default function App() {
           )
         }}></Tab.Screen>
 
-        <Tab.Screen name={"Info"} component={NotificationScreen} options={tabScreenOptions} listeners={({ navigation, route }) => ({
+        <Tab.Screen name={"Info"} component={InfoScreen} options={tabScreenOptions} listeners={({ navigation, route }) => ({
           tabPress: e => {
             Animated.spring(tabOffsetValue, {
               toValue: getWidth() * 3 - 20,
@@ -165,14 +166,6 @@ function SettingsScreen() {
 }
 
 
-
-function NotificationScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }} >
-      <Text > Notifications! </Text>
-    </View >
-  );
-}
 
 
 

@@ -11,3 +11,5 @@ npm install @react-navigation/native-stack
 npx expo install react-native-maps
 
 npm install --save react-native-gesture-handler
+
+npm install react-hook-form

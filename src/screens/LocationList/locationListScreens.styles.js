@@ -1,24 +1,26 @@
 import { Dimensions, StyleSheet, StatusBar } from 'react-native'
-import { COLORS } from '../../utils/theme'
+import { COLORS, FONT_SIZE } from '../../utils/theme'
 
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
         marginTop: StatusBar.currentHeight,
-        backgroundColor: COLORS.grey
+        backgroundColor: COLORS.secondary
     },
     itemContainer: {
         flex: 1,
-        width: Dimensions.get('screen').width - 20,
+        width: Dimensions.get('screen').width - 30,
         borderRadius: 20,
         overflow: 'hidden',
         marginBottom: 10,
-        backgroundColor: COLORS.white,
+        backgroundColor: COLORS.grey,
         elevation: 3,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.2,
-        shadowRadius: 2
+        shadowRadius: 2,
+        left: 15,
+        top: 20
     },
     listItem: {
         padding: 10
@@ -37,5 +39,12 @@ export const styles = StyleSheet.create({
         marginTop: 5,
         marginBottom: 10,
         marginHorizontal: 10
+    },
+    titleEventos:{
+        position: 'relative',
+        top: 10,
+        color: COLORS.white,
+        fontSize: FONT_SIZE.lg
     }
+
 })

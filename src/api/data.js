@@ -10,7 +10,11 @@ export const data = [{
             require('../../assets/images/Slide1/ima2.jpg'),
             require('../../assets/images/Slide1/ima3.jpg')
         ],
-        price: 'GRATUITO'
+        price: 'GRATUITO',
+        locationCoordinates: {
+          latitude: -24.1893858,
+          longitude: -65.2938462
+        }
     },
     {
         id: '2',
@@ -25,7 +29,11 @@ export const data = [{
             require('../../assets/images/Slide2/ima3.jpg')
 
         ],
-        price: 'GRATUITO'
+        price: 'GRATUITO',
+        locationCoordinates: {
+          latitude: -24.1893858,
+          longitude: -65.2938462
+        }
     },
     {
         id: '3',
@@ -40,7 +48,11 @@ export const data = [{
             require('../../assets/images/Slide3/ima3.jpg')
 
         ],
-        price: 'GRATUITO'
+        price: 'GRATUITO',
+        locationCoordinates: {
+          latitude: -24.1893858,
+          longitude: -65.2938462
+        }
     },
     {
         id: '4',
@@ -55,7 +67,11 @@ export const data = [{
             require('../../assets/images/Slide4/ima3.jpg')
 
         ],
-        price: 'GRATUITO'
+        price: 'GRATUITO',
+        locationCoordinates: {
+          latitude: -24.1893858,
+          longitude: -65.2938462
+        }
     },
     {
         id: '5',
@@ -70,7 +86,11 @@ export const data = [{
             require('../../assets/images/Slide5/ima3.jpg')
 
         ],
-        price: 'GRATUITO'
+        price: 'GRATUITO',
+        locationCoordinates: {
+          latitude: -24.1893858,
+          longitude: -65.2938462
+        }
     },
     {
         id: ' 6',
@@ -85,7 +105,11 @@ export const data = [{
             require('../../assets/images/Slide6/ima3.jpg')
 
         ],
-        price: 'GRATUITO'
+        price: 'GRATUITO',
+        locationCoordinates: {
+          latitude: -24.1893858,
+          longitude: -65.2938462
+        }
     },
     {
         id: '7',
@@ -100,7 +124,11 @@ export const data = [{
             require('../../assets/images/Slide7/ima2.jpg'),
             require('../../assets/images/Slide7/ima3.jpg')
         ],
-        price: 'GRATUITO'
+        price: 'GRATUITO',
+        locationCoordinates: {
+          latitude: -24.1893858,
+          longitude: -65.2938462
+        }
     }
 ]
 

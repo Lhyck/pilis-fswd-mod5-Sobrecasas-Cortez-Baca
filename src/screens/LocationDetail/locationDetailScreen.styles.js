@@ -60,5 +60,11 @@ export const styles = StyleSheet.create({
     paddingVertical: 8,
     width: 100,
     marginTop: 10
-  }
+  },
+  titleEventos:{
+    position: 'relative',
+    top: 10,
+    color: COLORS.white,
+    fontSize: FONT_SIZE.lg
+}
 })

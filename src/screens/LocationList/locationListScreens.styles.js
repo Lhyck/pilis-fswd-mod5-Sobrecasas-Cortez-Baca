@@ -40,11 +40,20 @@ export const styles = StyleSheet.create({
         marginBottom: 10,
         marginHorizontal: 10
     },
-    titleEventos:{
-        position: 'relative',
-        top: 10,
+    containerOff: {
+        flex: 1,
+        backgroundColor: COLORS.secondary,
+        marginTop: StatusBar.currentHeight,
+        width: Dimensions.get('screen').width,
+        alignItems: 'center',
+        alignContent: 'center',
+        padding: 10
+      },
+      titleOff: {
         color: COLORS.white,
-        fontSize: FONT_SIZE.lg
-    }
+        fontSize: 36,
+        fontWeight: 'bold',
+        marginTop: 300,
+      },
 
 })

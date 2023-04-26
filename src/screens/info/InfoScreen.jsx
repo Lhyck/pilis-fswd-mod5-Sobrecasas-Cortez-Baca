@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import {
   Text,
   View,
@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import { styles } from "./InfoScreen.styles";
 import { useForm, Controller } from "react-hook-form";
+import { UserContext } from "../../contexts/UserContext";
 
 export const InfoScreen = () => {
   const {
@@ -26,6 +27,23 @@ export const InfoScreen = () => {
     Alert.alert("Mensaje Enviado");
   };
 
+  const { currentUser } = useContext(UserContext);
+
+  const userLogged = (value) =>{
+
+    return currentUser ? (currentUser.username) : (value);
+  }
+   
+    
+   
+  
+
+  const userLoggedEmail = (value) =>(
+    currentUser ? (currentUser.username+'@gmail.com') : (value)
+   )
+
+ 
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Consultas e Informes</Text>
@@ -39,10 +57,10 @@ export const InfoScreen = () => {
           render={({ field: { onChange, onBlur, value } }) => (
             <TextInput
               style={styles.input}
-              placeholder="Nombre"
+              placeholder={'Nombre'}
               onBlur={onBlur}
               onChangeText={onChange}
-              value={value}
+              value={userLogged(value)}
               autoCapitalize="none"
             />
           )}
@@ -61,7 +79,7 @@ export const InfoScreen = () => {
               placeholder="Email"
               onBlur={onBlur}
               onChangeText={onChange}
-              value={value}
+              value={userLoggedEmail(value)}
               autoCapitalize="none"
             />
           )}

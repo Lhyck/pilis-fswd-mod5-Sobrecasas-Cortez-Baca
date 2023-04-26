@@ -11,6 +11,8 @@ import { useRef } from 'react';
 import { LocationListStackScreens } from './src/screens/LocationList/locationListStackScreen.jsx'
 import { HomeScreen } from './src/screens/home/HomeScreen';
 import { InfoScreen } from './src/screens/info/InfoScreen';
+import { LoginScreen } from './src/screens/login/LoginScreen';
+import { UserProvider } from './src/contexts/UserContext';
 
 
 const Tab = createBottomTabNavigator();
@@ -65,82 +67,84 @@ const tabScreenOptions = ({ route }) => {
 export default function App() {
   const tabOffsetValue = useRef(new Animated.Value(0)).current;
   return (
-    <NavigationContainer>
-      <Tab.Navigator screenOptions={tabBarOptions}>
-        <Tab.Screen name={"Home"} component={HomeScreen} options={tabScreenOptions} listeners={({ navigation, route }) => ({
-          tabPress: e => {
-            Animated.spring(tabOffsetValue, {
-              toValue: 0,
-              useNativeDriver: true
-            }).start();
-          }
-        })}></Tab.Screen>
-
-        <Tab.Screen name={"Explorar"} component={LocationListStackScreens} options={tabScreenOptions}
-          listeners={({ navigation, route }) => ({
+    <UserProvider>
+      <NavigationContainer>
+        <Tab.Navigator screenOptions={tabBarOptions}>
+          <Tab.Screen name={"Home"} component={HomeScreen} options={tabScreenOptions} listeners={({ navigation, route }) => ({
             tabPress: e => {
               Animated.spring(tabOffsetValue, {
-                toValue: getWidth(),
+                toValue: 0,
                 useNativeDriver: true
               }).start();
             }
           })}></Tab.Screen>
 
+          <Tab.Screen name={"Explorar"} component={LocationListStackScreens} options={tabScreenOptions}
+            listeners={({ navigation, route }) => ({
+              tabPress: e => {
+                Animated.spring(tabOffsetValue, {
+                  toValue: getWidth(),
+                  useNativeDriver: true
+                }).start();
+              }
+            })}></Tab.Screen>
 
 
-        <Tab.Screen name={"ActionButton"} component={EmptyScreen} options={{
-          tabBarIcon: ({ focused }) => (
-            <TouchableOpacity>
-              <View style={{
-                width: 60,
-                height: 60,
-                backgroundColor: COLORS.primary,
-                borderRadius: 30,
-                justifyContent: 'center',
-                alignItems: 'center',
-                marginBottom: Platform.OS == "android" ? 30 : 30
-              }}>
-                <Ionicons name="heart-circle-outline" size={30} color="white" />
-              </View>
-            </TouchableOpacity>
-          )
-        }}></Tab.Screen>
 
-        <Tab.Screen name={"Info"} component={InfoScreen} options={tabScreenOptions} listeners={({ navigation, route }) => ({
-          tabPress: e => {
-            Animated.spring(tabOffsetValue, {
-              toValue: getWidth() * 3 - 20,
-              useNativeDriver: true
-            }).start();
-          }
-        })}></Tab.Screen>
+          <Tab.Screen name={"Visit"} component={EmptyScreen} options={{
+            tabBarIcon: ({ focused }) => (
+              <TouchableOpacity>
+                <View style={{
+                  width: 60,
+                  height: 60,
+                  backgroundColor: COLORS.primary,
+                  borderRadius: 30,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  marginBottom: Platform.OS == "android" ? 30 : 30
+                }}>
+                  <Ionicons name="heart-circle-outline" size={30} color="white" />
+                </View>
+              </TouchableOpacity>
+            )
+          }}></Tab.Screen>
 
-        <Tab.Screen name={"Profile"} component={SettingsScreen} options={tabScreenOptions} listeners={({ navigation, route }) => ({
-          tabPress: e => {
-            Animated.spring(tabOffsetValue, {
-              toValue: getWidth() * 4 - 30,
-              useNativeDriver: true
-            }).start();
-          }
-        })}></Tab.Screen>
+          <Tab.Screen name={"Info"} component={InfoScreen} options={tabScreenOptions} listeners={({ navigation, route }) => ({
+            tabPress: e => {
+              Animated.spring(tabOffsetValue, {
+                toValue: getWidth() * 3 - 20,
+                useNativeDriver: true
+              }).start();
+            }
+          })}></Tab.Screen>
 
-      </Tab.Navigator>
+          <Tab.Screen name={"Profile"} component={LoginScreen} options={tabScreenOptions} listeners={({ navigation, route }) => ({
+            tabPress: e => {
+              Animated.spring(tabOffsetValue, {
+                toValue: getWidth() * 4 - 30,
+                useNativeDriver: true
+              }).start();
+            }
+          })}></Tab.Screen>
 
-      <Animated.View style={{
-        width: getWidth() - 20,
-        height: 4,
-        backgroundColor: COLORS.primary,
-        position: 'absolute',
-        bottom: 20,
-        left: 25,
-        borderRadius: 20,
-        transform: [
-          { translateX: tabOffsetValue }
-        ]
-      }}>
+        </Tab.Navigator>
 
-      </Animated.View>
-    </NavigationContainer>
+        <Animated.View style={{
+          width: getWidth() - 20,
+          height: 4,
+          backgroundColor: COLORS.primary,
+          position: 'absolute',
+          bottom: 20,
+          left: 25,
+          borderRadius: 20,
+          transform: [
+            { translateX: tabOffsetValue }
+          ]
+        }}>
+
+        </Animated.View>
+      </NavigationContainer>
+    </UserProvider>
   );
 }
 
@@ -153,20 +157,10 @@ function getWidth() {
 function EmptyScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Ventana especial</Text>
     </View>
   );
 }
-
-function SettingsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
-    </View>
-  );
-}
-
-
-
 
 
 const styles = StyleSheet.create({
